@@ -6,11 +6,12 @@ jobs:
       - image: cimg/base:2024.05
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Test
           command: |
             TAG=0.1.$CIRCLE_BUILD_NUM
-            docker build -t luczwanenberg/001-dockerize-nodejs:$TAG . --target=test
+            docker build -t luczwanenbergg/001-dockerize-nodejs:$TAG . --target=test
 
 workflows:
   build_and_test:
