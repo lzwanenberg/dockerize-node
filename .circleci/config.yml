@@ -1,7 +1,8 @@
 version: 2.1
 
 jobs:
-  test:
+  run_unit_tests:
+    description: Run unit tests
     docker:
       - image: cimg/base:2024.05
     steps:
@@ -14,6 +15,6 @@ jobs:
             docker build -t luczwanenbergg/001-dockerize-nodejs:$TAG . --target=test
 
 workflows:
-  build_and_test:
+  build_test_promote:
     jobs:
-      - test
+      - run_unit_tests
