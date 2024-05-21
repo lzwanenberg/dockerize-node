@@ -24,15 +24,15 @@ workflows:
   test:
     jobs:
       - run_unit_tests
-  publish:
-    jobs:
-      - run_unit_tests:
-          filters:
-            tags:
-              only: /^v.*/
-      - publish_docker_image:
-          filters:
-            tags:
-              only: /^v.*/
-        requires:
-          - run_unit_tests
+  # publish:
+  #   jobs:
+  #     - run_unit_tests:
+  #         filters:
+  #           tags:
+  #             only: /^v.*/
+  #     - publish_docker_image:
+  #         filters:
+  #           tags:
+  #             only: /^v.*/
+  #       requires:
+  #         - run_unit_tests
