@@ -30,9 +30,13 @@ workflows:
           filters:
             tags:
               only: /^v.*/
+            branches:
+              ignore: /.*/
       - publish_docker_image:
           filters:
             tags:
               only: /^v.*/
+            branches:
+              ignore: /.*/
           requires:
             - run_unit_tests
