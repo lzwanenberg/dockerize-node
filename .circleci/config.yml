@@ -21,9 +21,9 @@ jobs:
       - run: echo "hello world"
 
 workflows:
-  # test:
-  #   jobs:
-  #     - run_unit_tests
+  test:
+    jobs:
+      - run_unit_tests
   publish:
     jobs:
       - run_unit_tests:
