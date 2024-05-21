@@ -24,7 +24,7 @@ workflows:
   test:
     jobs:
       - run_unit_tests
-  publish:
+  test_and_publish_if_successful:
     jobs:
       - run_unit_tests:
           filters:
